@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#ff7a18" />
+  <title>Swish Factory</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app" class="app court-driveway">
+    <canvas id="gameCanvas" aria-label="Swish Factory basketball court" role="img"></canvas>
+    <div id="flashLayer"></div>
+    <div id="prestigeOverlay" class="prestige-overlay hidden">
+      <div class="prestige-ball"></div>
+      <h1>GO PRO!</h1>
+      <p>Fame energy rewrites your basketball destiny.</p>
+    </div>
+
+    <header class="topbar glass">
+      <div class="brand">
+        <div class="logo-ball" aria-hidden="true"></div>
+        <div>
+          <h1>SWISH FACTORY</h1>
+          <span id="courtName">Driveway</span>
+        </div>
+      </div>
+      <div class="stats-grid" aria-live="polite">
+        <div class="stat"><span class="coin-icon"></span><small>Money</small><strong id="moneyText">$0</strong></div>
+        <div class="stat"><span class="fame-icon"></span><small>Fame</small><strong id="fameText">0</strong></div>
+        <div class="stat"><span class="spark-icon"></span><small>Per sec</small><strong id="mpsText">$0/s</strong></div>
+        <div class="stat"><span class="combo-icon"></span><small>Combo</small><strong id="comboText">x0</strong></div>
+      </div>
+      <div class="controls">
+        <button id="soundBtn" class="pill">🔊 Sound</button>
+        <button id="saveBtn" class="pill">💾 Save</button>
+      </div>
+    </header>
+
+    <main class="hud">
+      <section class="left-panel glass">
+        <div class="shot-card">
+          <h2>Drag • Aim • Release</h2>
+          <p>Make baskets to earn cash. Clean swishes stack combos and explode with bonuses.</p>
+          <div class="meter"><span id="xpBar"></span></div>
+          <small id="xpText">XP from misses unlocks consistency.</small>
+        </div>
+        <div class="court-card">
+          <h3>Courts</h3>
+          <div id="courtList" class="court-list"></div>
+        </div>
+        <div class="minigame-card">
+          <h3>Minigames</h3>
+          <div id="minigameList" class="minigame-list"></div>
+        </div>
+      </section>
+
+      <section class="right-panel glass">
+        <div class="tabs">
+          <button class="tab active" data-tab="upgrades">Upgrades</button>
+          <button class="tab" data-tab="achievements">Badges</button>
+        </div>
+        <div id="upgrades" class="tab-panel active"><div id="upgradeList" class="upgrade-list"></div></div>
+        <div id="achievements" class="tab-panel"><div id="achievementList" class="achievement-list"></div></div>
+      </section>
+    </main>
+
+    <footer class="bottom-dock glass">
+      <button id="shootBtn" class="primary-action">🏀 Quick Shot</button>
+      <button id="wheelBtn" class="dock-btn">🎡 Prize Wheel</button>
+      <button id="prestigeBtn" class="prestige-btn">⭐ GO PRO</button>
+    </footer>
+
+    <div id="toastStack" class="toast-stack"></div>
+    <div id="modal" class="modal hidden" role="dialog" aria-modal="true"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
